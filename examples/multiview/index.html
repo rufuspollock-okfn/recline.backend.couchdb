@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>CouchDB Multiview - Example - Recline JS Data Library</title>
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://raw.github.com/okfn/recline/master/vendor/leaflet/0.4.4/leaflet.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://raw.github.com/okfn/recline/master/vendor/leaflet/0.4.4/leaflet.ie.css" />
+  <![endif]-->
+  <link rel="stylesheet" href="https://raw.github.com/okfn/recline/master/vendor/leaflet.markercluster/MarkerCluster.css">
+  <link rel="stylesheet" href="https://raw.github.com/okfn/recline/master/vendor/leaflet.markercluster/MarkerCluster.Default.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://raw.github.com/okfn/recline/master/vendor/leaflet.markercluster/MarkerCluster.Default.ie.css" />
+  <![endif]-->
+  <link rel="stylesheet" href="https://raw.github.com/okfn/recline/master/vendor/slickgrid/2.0.1/slick.grid.css">
+  <link rel="stylesheet" href="https://raw.github.com/okfn/recline/master/vendor/timeline/20120520/css/timeline.css">
+
+  <!-- Recline CSS components -->
+  <link rel="stylesheet" href="https://raw.github.com/okfn/recline/master/dist/recline.css">
+  <!-- /Recline CSS components -->
+
+  <!-- 3rd party JS libraries -->
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/jquery/1.7.1/jquery.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/underscore/1.4.2/underscore.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/backbone/0.9.2/backbone.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/mustache/0.5.0-dev/mustache.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/bootstrap/2.0.2/bootstrap.js"></script>
+  <!--[if lte IE 8]>
+  <script language="javascript" type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/flot/excanvas.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/flot/jquery.flot.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/leaflet/0.4.4/leaflet.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/slickgrid/2.0.1/jquery-ui-1.8.16.custom.min.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/slickgrid/2.0.1/jquery.event.drag-2.0.min.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/slickgrid/2.0.1/slick.grid.min.js"></script>
+  <!--[if lte IE 7]>
+  <script language="javascript" type="text/javascript" src="https://raw.github.com/okfn/recline/master/vendor/json/json2.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="https://raw.github.com/okfn/recline/master/dist/recline.js"></script>
+
+<style type="text/css">
+.recline-slickgrid {
+  height: 550px;
+}
+
+.recline-timeline .vmm-timeline {
+  height: 550px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="instructions">
+  <h2>Instructions</h2>
+  <p>To use this demo you will need a CouchDB instance running and accessible over HTTP. You should then pass the following 2 query parameters to this page:</p>
+
+<pre>url: url-to-your-couchdb-instance
+view_url: url-to-your-couchdb-view
+
+Example:
+http://path-to-this-page/?url=/mycouchdb/&amp;view_url=/mycouchdb/_design/yourdesigndoc/_view/yourview
+</pre>
+
+  <p>Note that if the CouchDB database is <em>not</em> running on the same domain as this page then the host it is on <em>must</em> support CORS &ndash; the simplest approach here is probably to set up a reverse proxy or proxy so your CouchDB database appears on the local domain at e.g. /mycouchdb/.</p>
+</div>
+
+<h2>Demo</h2>
+
+<div class="data-explorer-here"></div>
+
+<div style="clear: both;"></div>
+</div>
+
+<script type="text/javascript" src="../../backend.couchdb.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
